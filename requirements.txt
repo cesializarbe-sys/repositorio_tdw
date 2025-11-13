@@ -1,0 +1,10 @@
+# ---- Requisitos del proyecto Flask + Tailwind CSS ----
+# Python 3.10 o superior recomendado
+# Tailwind CSS se carga desde CDN (no requiere instalación por pip)
+
+flask==3.0.3
+db-sqlite3
+jinja2
+itsdangerous
+click
+werkzeug

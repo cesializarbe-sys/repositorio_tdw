@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlueStore - Inicio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@4.0.0/dist/tailwind.min.css" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+
+<body class="bg-blue-50 text-gray-800 font-sans">
+
+  <!-- NAVBAR TRANSPARENTE -->
+  <header class="sticky top-0 z-50 bg-blue-900/80 text-white p-4 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <img src="{{ url_for('static', filename='image/logo.jpg') }}" alt="Logo" class="w-10 h-10 rounded-full">
+        <h1 class="text-xl font-bold">BlueStore</h1>
+      </div>
+
+      <button id="menu-toggle" class="md:hidden text-3xl focus:outline-none">☰</button>
+
+      <nav class="hidden md:flex space-x-6 text-lg">
+        <a href="#inicio" class="px-3 py-2 rounded-lg transition transform hover:scale-105 hover:bg-[#800264]">Inicio</a>
+        <a href="#nosotros" class="px-3 py-2 rounded-lg transition transform hover:scale-105 hover:bg-[#800264]">Nosotros</a>
+        <a href="#registro" class="px-3 py-2 rounded-lg transition transform hover:scale-105 hover:bg-[#800264]">Regístrate</a>
+        <a href="#carrito" class="px-3 py-2 rounded-lg transition transform hover:scale-105 hover:bg-[#800264] flex items-center gap-1">
+          <i class="fas fa-shopping-cart"></i> 🛒
+        </a>
+      </nav>
+    </div>
+
+    <div id="menu-responsive" class="hidden flex-col md:hidden bg-blue-900 text-white text-center py-4 space-y-2">
+      <a href="#inicio" class="block py-2 transition transform hover:scale-105 hover:bg-[#800264]">Inicio</a>
+      <a href="#nosotros" class="block py-2 transition transform hover:scale-105 hover:bg-[#800264]">Nosotros</a>
+      <a href="#registro" class="block py-2 transition transform hover:scale-105 hover:bg-[#800264]">Regístrate</a>
+      <a href="#carrito" class="block py-2 transition transform hover:scale-105 hover:bg-[#800264]">Carrito</a>
+    </div>
+  </header>
+
+  <!-- INICIO -->
+  <section id="inicio" class="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-blue-800 to-blue-600 text-white pt-24">
+    <div class="text-center mb-10 px-6">
+      <h2 class="text-5xl font-bold mb-4">Bienvenido a BlueStore</h2>
+      <p class="text-lg mb-6">Tu tienda digital de confianza, rápida y moderna.</p>
+    </div>
+
+    <!-- CARRUSEL -->
+    <div class="relative w-full max-w-4xl overflow-hidden rounded-2xl shadow-lg">
+      <div id="carousel" class="flex w-[300%] transition-transform duration-700 ease-in-out">
+        <img src="{{ url_for('static', filename='image/image1.jpg') }}" class="w-[100%] h-96 object-cover" alt="Slide 1">
+        <img src="{{ url_for('static', filename='image/image2.jpg') }}" class="w-[100%] h-96 object-cover" alt="Slide 2">
+        <img src="{{ url_for('static', filename='image/image3.jpg') }}" class="w-[100%] h-96 object-cover" alt="Slide 3">
+      </div>
+
+      <button id="prev" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white text-blue-900 rounded-full p-2 shadow hover:bg-gray-100 transition hover:scale-110">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button id="next" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white text-blue-900 rounded-full p-2 shadow hover:bg-gray-100 transition hover:scale-110">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- OFERTAS -->
+  <section id="nosotros" class="py-20 bg-white text-center px-6">
+    <h3 class="text-4xl font-bold text-blue-800 mb-6">¡DESCUBRE NUESTRAS OFERTAS!</h3>
+    <p class="text-gray-600 max-w-2xl mx-auto mb-10">
+      Aprovecha los mejores precios en moda y estilo. ¡Solo por tiempo limitado!
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="bg-blue-50 p-4 rounded-2xl shadow-lg transition transform hover:scale-105">
+        <img src="{{ url_for('static', filename='image/polo.jpg') }}" class="w-full h-64 object-cover rounded-xl mb-4" alt="Ropa 1">
+        <h4 class="font-semibold text-lg text-blue-900">Polo</h4>
+        <p class="text-gray-600">S/12.90</p>
+      </div>
+      <div class="bg-blue-50 p-4 rounded-2xl shadow-lg transition transform hover:scale-105">
+        <img src="{{ url_for('static', filename='image/falda.jpg') }}" class="w-full h-64 object-cover rounded-xl mb-4" alt="Ropa 2">
+        <h4 class="font-semibold text-lg text-blue-900">Falda</h4>
+        <p class="text-gray-600">S/20.00</p>
+      </div>
+      <div class="bg-blue-50 p-4 rounded-2xl shadow-lg transition transform hover:scale-105">
+        <img src="{{ url_for('static', filename='image/poloalhombro.jpg') }}" class="w-full h-64 object-cover rounded-xl mb-4" alt="Ropa 3">
+        <h4 class="font-semibold text-lg text-blue-900">Polo al hombre</h4>
+        <p class="text-gray-600">S/16.90</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTRO -->
+  <section id="registro" class="py-20 bg-blue-100 text-center">
+    <h3 class="text-4xl font-bold text-blue-800 mb-6">Regístrate</h3>
+    <p class="text-gray-600 mb-8">Crea una cuenta y disfruta de beneficios exclusivos.</p>
+    <a href="/registro" class="bg-blue-800 text-white px-6 py-2 rounded-full transition transform hover:scale-105 hover:bg-blue-900">Ir al formulario</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-blue-900 text-white py-8">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center px-6">
+      <div class="text-center md:text-left">
+        <h4 class="font-bold text-lg">© 2025 BlueStore</h4>
+        <p class="text-sm text-blue-200">Todos los derechos reservados</p>
+      </div>
+      <div class="flex items-center space-x-3">
+        <img src="{{ url_for('static', filename='image/Instagram.jpg') }}" alt="Instagram" class="w-10 h-10 rounded-full hover:scale-110 transition">
+        <img src="{{ url_for('static', filename='image/Facebook.jpg') }}" alt="Facebook" class="w-10 h-10 rounded-full hover:scale-110 transition">
+        <img src="{{ url_for('static', filename='image/WhatsApp.jpg') }}" alt="WhatsApp" class="w-10 h-10 rounded-full hover:scale-110 transition">
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT CARRUSEL FUNCIONAL -->
+  <script>
+  const carousel = document.getElementById('carousel');
+  const slides = carousel.querySelectorAll('img');
+  let index = 0;
+
+  function showSlide(i) {
+    const slideWidth = slides[0].clientWidth;
+    carousel.style.transform = `translateX(-${i * slideWidth}px)`;
+  }
+
+  document.getElementById('next').addEventListener('click', () => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  });
+
+  document.getElementById('prev').addEventListener('click', () => {
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+  });
+
+  setInterval(() => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  }, 4000);
+
+  // Ajustar al redimensionar
+  window.addEventListener('resize', () => showSlide(index));
+</script>
+
+</body>
+</html>
